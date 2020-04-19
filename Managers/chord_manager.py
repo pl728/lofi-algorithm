@@ -48,6 +48,7 @@ class ChordManager:
         possible_steps = [2, 4, 5]
         root2 = random.choice(possible_steps)
         possible_steps.remove(root2)
+        possible_steps.append(7)
         root3 = random.choice(possible_steps)
         possible_steps.append(root2)
         possible_steps.append(0)
@@ -72,6 +73,8 @@ class ChordManager:
 
         chords = [chord1, chord2, chord3, chord4]
         return ChordProgression(chords)
+
+
 
     def add_to_midi(self, notes: List[Note], midi_file: MIDIFile) -> None:
         for note in notes:
