@@ -1,4 +1,5 @@
 from typing import List
+
 from MusicObjects.note import Note
 
 
@@ -10,6 +11,38 @@ class Chord:
 
     def __init__(self, notes: List[int]):
         self.notes = notes
+
+    def convert_to_letter(self):
+
+        note_letters = []
+        for note in self.notes:
+            octave = note // 12
+            if note % 12 == 0:
+                note_letters.append("c" + str(octave))
+            elif note % 12 == 1:
+                note_letters.append("c#" + str(octave))
+            elif note % 12 == 2:
+                note_letters.append("d" + str(octave))
+            elif note % 12 == 3:
+                note_letters.append("d#" + str(octave))
+            elif note % 12 == 4:
+                note_letters.append("e" + str(octave))
+            elif note % 12 == 5:
+                note_letters.append("f" + str(octave))
+            elif note % 12 == 6:
+                note_letters.append("f#" + str(octave))
+            elif note % 12 == 7:
+                note_letters.append("g" + str(octave))
+            elif note % 12 == 8:
+                note_letters.append("g#" + str(octave))
+            elif note % 12 == 9:
+                note_letters.append("a" + str(octave))
+            elif note % 12 == 10:
+                note_letters.append("a#" + str(octave))
+            elif note % 12 == 11:
+                note_letters.append("b" + str(octave))
+
+        return note_letters
 
     def __str__(self):
         note_letters = []
@@ -50,3 +83,6 @@ class Chord:
         for note in self.notes:
             notes.append(Note(note, time_, duration, volume))
         return notes
+
+    def get_notes(self):
+        return self.notes

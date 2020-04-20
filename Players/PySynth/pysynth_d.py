@@ -29,7 +29,6 @@
 """
 
 from __future__ import division
-from Players.Pysynth.demosongs import *
 
 from Players.PySynth.demosongs import song4_rh, song3, song2, song4_lh, song1
 from Players.PySynth.mkfreq import getfreq

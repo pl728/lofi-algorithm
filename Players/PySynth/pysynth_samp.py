@@ -44,7 +44,7 @@ fnames = getfn(10)
 
 # path to Salamander piano samples (http://freepats.zenvoid.org/Piano/acoustic-grand-piano.html),
 #       48 kHz version:
-patchpath = "/usr/share/sounds/SalamanderGrandPianoV3_48khz24bit/48khz24bit/"
+patchpath = r"C:\Users\linpa\PycharmProjects\beats/res/48khz24bit/"
 
 
 ##########################################################################
