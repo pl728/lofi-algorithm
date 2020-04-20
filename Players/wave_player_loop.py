@@ -14,7 +14,7 @@ class WavePlayerLoop(threading.Thread):
     continues to do its stuff. :)
     """
 
-    CHUNK = 1028
+    CHUNK = 1028 * 4
 
     def __init__(self, filepath, loop=True):
         """

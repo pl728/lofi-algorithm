@@ -1,12 +1,9 @@
 import random
 from tkinter import *
-from tkinter import ttk
-from tkinter.ttk import Combobox
-from typing import List
 
 from midiutil import MIDIFile
 
-from Managers.chord_manager import ChordManager
+from Composer.chord_composer import ChordGenerator
 from Players.sine_player import SinePlayer
 from Players.wave_player_loop import WavePlayerLoop
 from pydub import AudioSegment
@@ -42,19 +39,18 @@ class BeatEditor:
         button_stop.bind("<Button-1>", self.stop_all_button)
         button_stop.grid(column=0, row=2)
 
-
-        drum_rhythm_label = Label(master, text="Drum Rhythm")
-        drum_rhythm_label.grid(column=2, row=0)
-
         button_rhythm_left = Button(master, text="<")
         button_rhythm_left.bind("<Button-1>",
                                 self.left_rhythm)
-        button_rhythm_left.grid(column=1, row=0)
+        button_rhythm_left.grid(column=2, row=0)
+
+        drum_rhythm_label = Label(master, text="Drum Rhythm")
+        drum_rhythm_label.grid(column=3, row=0)
 
         button_rhythm_right = Button(master, text=">")
         button_rhythm_right.bind("<Button-1>",
                                  self.right_rhythm)
-        button_rhythm_right.grid(column=3, row=0)
+        button_rhythm_right.grid(column=4, row=0)
 
     def left_rhythm(self, event):
         if self.current_drum_rhythm == 0:
@@ -90,7 +86,6 @@ class BeatEditor:
         self.combined_loop = WavePlayerLoop(r'output.wav')
         self.combined_loop.play()
 
-
     def play_all_button(self, event):
         self.combined_loop.stop()
         self.combined_loop = WavePlayerLoop(r'output.wav')
@@ -101,15 +96,14 @@ class BeatEditor:
 
     def generate(self, event):
         self.combined_loop.stop()
-        chord_manager = ChordManager()
-        chord_progression = chord_manager.generate_lofi_progression(
-            random.randint(52, 65))
+        chord_manager = ChordGenerator()
+        chord_progression = chord_manager\
+            .generate_lofi_progression(random.randint(52, 65))
         chord_progression_notes = chord_progression.convert_to_notes()
         midi_file = MIDIFile()
         midi_file.addTempo(0, 0, 80)
         chord_manager.add_to_midi(chord_progression_notes, midi_file)
         player = SinePlayer()
-        player.play_midi_and_record_wav(midi_file)
+        player.record_midi_wav(midi_file)
         combine_sound_file()
-
 

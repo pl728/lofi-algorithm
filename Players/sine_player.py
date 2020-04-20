@@ -3,8 +3,7 @@ from time import sleep
 
 import pyaudio as pyaudio
 from mido import MidiFile
-from pyo import Server, Notein, MidiAdsr, MToF, SineLoop, STRev, Sine, CrossFM, \
-    Fader, Record, Clean_objects
+from pyo import Server, Notein, MidiAdsr, MToF, SineLoop, STRev, Record, Clean_objects
 
 from Players.wave_player_loop import WavePlayerLoop
 
@@ -14,7 +13,8 @@ class SinePlayer:
     def __init__(self):
         pass
 
-    def play_midi_and_record_wav(self, mid_):
+    @staticmethod
+    def record_midi_wav(mid_):
         # write mid_ to file
         with open("test.mid", "wb") as bin_file:
             mid_.writeFile(bin_file)
@@ -40,4 +40,3 @@ class SinePlayer:
             s.addMidiEvent(*message.bytes())
 
         s.stop()
-
