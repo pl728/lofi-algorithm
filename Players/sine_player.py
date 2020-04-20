@@ -1,16 +1,20 @@
+import wave
 from time import sleep
 
+import pyaudio as pyaudio
 from mido import MidiFile
 from pyo import Server, Notein, MidiAdsr, MToF, SineLoop, STRev, Sine, CrossFM, \
     Fader, Record, Clean_objects
 
+from Players.wave_player_loop import WavePlayerLoop
+
 
 class SinePlayer:
+
     def __init__(self):
         pass
 
-    @staticmethod
-    def play_midi_and_record_wav(mid_):
+    def play_midi_and_record_wav(self, mid_):
         # write mid_ to file
         with open("test.mid", "wb") as bin_file:
             mid_.writeFile(bin_file)
@@ -25,7 +29,7 @@ class SinePlayer:
         rev = STRev(osc, revtime=1, cutoff=4000, bal=0.2).out()
 
         # create recorder
-        rec = Record(rev, filename='beat.wav')
+        rec = Record(rev, buffering=2, filename='beat.wav', quality=0.4)
         clean = Clean_objects(12, rec)
         clean.start()
 
@@ -37,5 +41,3 @@ class SinePlayer:
 
         s.stop()
 
-    def offline_render(self):
-        pass

@@ -74,8 +74,6 @@ class ChordManager:
         chords = [chord1, chord2, chord3, chord4]
         return ChordProgression(chords)
 
-
-
     def add_to_midi(self, notes: List[Note], midi_file: MIDIFile) -> None:
         for note in notes:
             midi_file.addNote(0, 0, note.frequency, note.time_, note.duration,
