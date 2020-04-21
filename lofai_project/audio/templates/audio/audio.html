@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static '/styles/audio.css' %}">
+    <title>Lo-fi Beat Generator</title>
+</head>
+<body>
+    <div class="container">
+        <video autoplay loop muted id="background-video">
+        <source src="{% static 'video/animation.mp4' %}"
+                type="video/mp4">
+    </video>
+
+    </div>
+
+    <h1>Lo-fi Beat Generator Home</h1>
+    <audio controls loop autoplay>
+        <source src="{% static 'audio/output.wav' %}"
+                type="audio/wav">
+    </audio>
+</body>
+</html>

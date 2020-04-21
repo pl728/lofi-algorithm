@@ -1,6 +1,6 @@
 class Note:
     frequency: int  # 60 is C(4?)
-    time_: int  # in beats
+    time_: int  # in audio
     duration: int  # in BPM
     velocity: int  # 0-127, as per the MIDI standard
 
