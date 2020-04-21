@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static '/styles/audio.css' %}">
+    <title>Lo-fi Beat Generator</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="">Home</a></li>
+        </ul>
+
+    </nav>
+    <div id="video-container">
+        <video autoplay loop muted id="background-video">
+        <source src="{% static 'video/test.mp4' %}" type="video/mp4">
+
+    </video>
+
+    </div>
+
+
+    <div class="content">
+        <h1>Welcome to Lofai</h1>
+        <audio controls loop autoplay class="audio-player">
+            <source src="{% static 'audio/output.wav' %}"
+                    type="audio/wav">
+        </audio>
+        <!-- Use a button to pause/play the video with JavaScript -->
+        <button id="myBtn" onclick="myFunction()">Pause</button>
+    </div>
+
+</body>
+</html>

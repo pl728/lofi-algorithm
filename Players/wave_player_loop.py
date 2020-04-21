@@ -10,7 +10,7 @@ import pyaudio
 class WavePlayerLoop(threading.Thread):
     """
     A simple class based on PyAudio to generate wave loop.
-    It's a threading class. You can generate audio while your application
+    It's a threading class. You can generate app while your application
     continues to do its stuff. :)
     """
 

@@ -3,7 +3,7 @@
 """
 ##########################################################################
 #                       * * *  PySynth  * * *
-#       A very basic audio synthesizer in Python (www.python.org)
+#       A very basic app synthesizer in Python (www.python.org)
 #
 #          Martin C. Doege, 2009-04-07 (mdoege@compuserve.com)
 ##########################################################################

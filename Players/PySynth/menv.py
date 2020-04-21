@@ -109,7 +109,7 @@ class mEnv:
 
                 continue
 
-            # Notes and audio.
+            # Notes and app.
             i = 0
             for alphanum in comp:
                 if alphanum.isalpha():

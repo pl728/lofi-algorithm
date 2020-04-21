@@ -10,9 +10,9 @@ def overlay_waves(files: List[str], chord_length: int, file_number: int):
         output = output.overlay(audio_segments[i])
     output.export("chord" + str(file_number) + ".wav", format="wav")
 
-def add_waves(files: List[str]):
+def add_waves(files: List[str], export_file: str):
     audio_segments = [AudioSegment.from_wav(file) for file in files]
     output = sum(audio_segments)
-    output.export("output.wav", format='wav')
+    output.export(export_file, format='wav')
 
 

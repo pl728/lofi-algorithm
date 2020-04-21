@@ -91,7 +91,7 @@ class Sound:
 		pyglet.app.run()
 
 	def play_media(self, mediaFile):
-		''' In absence of audio playback frameworks, just use an OS-based console media player.'''
+		''' In absence of app playback frameworks, just use an OS-based console media player.'''
 
 		# https://github.com/mdoege/NewsFeed/blob/master/newsfeed.py#L49 Thanks for the code, Martin!
 		media_player = os.getenv("MEDIA_PLAYER")

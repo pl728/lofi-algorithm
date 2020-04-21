@@ -21,7 +21,7 @@ class SinePlayer:
 
         s = Server().boot().start()
 
-        # create audio synth
+        # create app synth
         midi_reader = Notein()
         amp = MidiAdsr(midi_reader['velocity'])
         pit = MToF(midi_reader['pitch'])
