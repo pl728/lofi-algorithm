@@ -1,5 +1,5 @@
 """
-WSGI config for LofaiProject project.
+WSGI config for lofai_project project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'LofaiProject.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'lofai_project.settings')
 
 application = get_wsgi_application()
