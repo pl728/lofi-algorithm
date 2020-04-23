@@ -8,6 +8,7 @@ class Chord:
     A musical chord that contains notes.
     """
     notes: List[int]
+    type: str
 
     def __init__(self, notes: List[int]):
         self.notes = notes
