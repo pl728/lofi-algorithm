@@ -9,4 +9,3 @@ class Note:
         self.time_ = time_
         self.duration = duration
         self.velocity = velocity
-
