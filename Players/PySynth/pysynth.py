@@ -28,10 +28,8 @@
 # 5.33 = -8 = dotted eighth
 """
 
-from Players.PySynth.demosongs import *
+from Players.PySynth.demosongs import song1, song2, song3, song4_lh, song4_rh
 from Players.PySynth.mkfreq import getfreq
-
-from Players.PySynth.demosongs import song1, song2, song3, song4_rh, song4_lh
 
 pitchhz, keynum = getfreq(pr = True)
 
@@ -159,7 +157,9 @@ def make_wav(song,bpm=120,transpose=0,pause=.05,boost=1.1,repeat=0,fn="out.wav",
 
 	f.writeframes(b'')
 	f.close()
-	print()
+
+
+# print()
 
 ##########################################################################
 # Synthesize demo songs

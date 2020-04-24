@@ -30,11 +30,13 @@
 # 5.33 = -8 = dotted eighth
 """
 
-import wave, struct
+import wave
+from math import exp, log, pi
+
 import numpy as np
-from math import sin, cos, pi, log, exp
-from Players.PySynth.mixfiles import mix_files
+
 from Players.PySynth.demosongs import *
+from Players.PySynth.mixfiles import mix_files
 from Players.PySynth.mkfreq import getfreq
 
 pitchhz, keynum = getfreq()
@@ -244,7 +246,9 @@ def make_wav(song,bpm=120,transpose=0,leg_stac=.9,boost=1.1,repeat=0,fn="out.wav
 	data2[:] = 32000. * data[:out_len]
 	f.writeframes(data2.tostring())
 	f.close()
-	print()
+
+
+# print()
 
 ##########################################################################
 # Synthesize demo songs

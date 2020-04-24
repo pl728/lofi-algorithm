@@ -30,12 +30,14 @@
 
 from __future__ import division
 
-import wave, struct
+import struct
+import wave
+
 import numpy as np
-from math import sin, cos, pi, log, exp
-from Players.PySynth.mixfiles import mix_files
+
 from Players.PySynth.demosongs import *
-from Players.PySynth.mkfreq import getfreq, getfn
+from Players.PySynth.mixfiles import mix_files
+from Players.PySynth.mkfreq import getfn, getfreq
 
 pitchhz, keynum = getfreq()
 
@@ -141,8 +143,8 @@ def make_wav(song,bpm=120,transpose=0,leg_stac=.9,boost=1.1,repeat=0,fn="out.wav
 
 	for rp in range(repeat+1):
 		for nn, x in enumerate(song):
-			if not nn % 4 and silent == False:
-				print("[%u/%u]\t" % (nn+1,len(song)))
+            # if not nn % 4 and silent == False:
+            # print("[%u/%u]\t" % (nn+1,len(song)))
 			if x[0]!='r':
 				if x[0][-1] == '*':
 					vol = boost
@@ -170,8 +172,8 @@ def make_wav(song,bpm=120,transpose=0,leg_stac=.9,boost=1.1,repeat=0,fn="out.wav
 	##########################################################################
 	# Write to output file (in WAV format)
 	##########################################################################
-	if silent == False:
-		print("Writing to file", fn)
+    # if silent == False:
+    # 	print("Writing to file", fn)
 
 	data = data / (data.max() * 2.)
 	out_len = int(2. * 48000. + ex_pos+.5)
@@ -179,7 +181,9 @@ def make_wav(song,bpm=120,transpose=0,leg_stac=.9,boost=1.1,repeat=0,fn="out.wav
 	data2[:] = 32000. * data[:out_len]
 	f.writeframes(data2.tostring())
 	f.close()
-	print()
+
+
+# print()
 
 ##########################################################################
 # Synthesize demo songs

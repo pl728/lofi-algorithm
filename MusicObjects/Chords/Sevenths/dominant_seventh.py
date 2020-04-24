@@ -1,7 +1,7 @@
 from MusicObjects.Chords.chord import Chord
 
 
-class MajorDominantChord(Chord):
+class DominantSeventhChord(Chord):
 
     def __init__(self, root):
         notes = [root, root + 4, root + 7, root + 10]

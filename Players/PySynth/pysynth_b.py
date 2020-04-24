@@ -31,10 +31,12 @@
 """
 
 import wave
+from math import cos, exp, log, pi
+
 import numpy as np
-from math import cos, pi, log, exp
-from Players.PySynth.mixfiles import mix_files
+
 from Players.PySynth.demosongs import *
+from Players.PySynth.mixfiles import mix_files
 from Players.PySynth.mkfreq import getfreq
 
 pitchhz, keynum = getfreq()
@@ -125,7 +127,7 @@ harm_max = 5.
 ##########################################################################
 
 def make_wav(song, bpm=120, transpose=0, leg_stac=.9, boost=1.1, repeat=0, fn="out.wav",
-             silent=False):
+             silent=True):
     data = []
     note_cache = {}
     cache_this = {}
@@ -256,7 +258,7 @@ def make_wav(song, bpm=120, transpose=0, leg_stac=.9, boost=1.1, repeat=0, fn="o
     data2[:] = 32000. * data[:out_len]
     f.writeframes(data2.tostring())
     f.close()
-    print()
+    # print()
 
 
 ##########################################################################

@@ -31,10 +31,12 @@
 """
 
 import wave
+from math import ceil, cos, floor, log, pi, sin
+
 import numpy as np
-from math import sin, cos, pi, log, floor, ceil
-from Players.PySynth.mixfiles import mix_files
+
 from Players.PySynth.demosongs import *
+from Players.PySynth.mixfiles import mix_files
 from Players.PySynth.mkfreq import getfreq
 
 pitchhz, keynum = getfreq()
@@ -194,7 +196,7 @@ def make_wav(song, bpm=120, transpose=0, pause=0., boost=1.1, repeat=0, fn="out.
     data2[:] = 32000. * data[:out_len]
     f.writeframes(data2.tostring())
     f.close()
-    print()
+    # print()
 
 
 ##########################################################################

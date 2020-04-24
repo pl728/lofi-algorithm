@@ -1,5 +1,6 @@
-from pydub import AudioSegment
 from typing import List
+
+from pydub import AudioSegment
 
 
 def overlay_waves(files: List[str], chord_length_time: int, file_number: int):
@@ -10,13 +11,25 @@ def overlay_waves(files: List[str], chord_length_time: int, file_number: int):
         output = output.overlay(audio_segments[i])
     output.export("b" + str(file_number) + ".wav", format="wav")
 
+
 def add_waves(files: List[str], export_file: str):
     audio_segments = [AudioSegment.from_wav(file) for file in files]
     output = sum(audio_segments)
     output.export(export_file, format='wav')
 
 
-def overlay_drums(chord: str, drum: str, file_number: int):
+def add_silence(file: str, export_file: str, silence_amount: int):
+    """silence length: 3sec * silence amount"""
+    before = AudioSegment.from_wav(file)
+    output = before + AudioSegment.from_wav("vinyl-3s.wav")
+    for i in range(silence_amount):
+        output = output + AudioSegment.from_wav("silence-3sec.wav")
+    output.export(export_file, format="wav")
+
+
+def overlay_background(chord: str, background: List[str], file_number: int):
     c = AudioSegment.from_wav(chord)
-    d = AudioSegment.from_wav(drum)
-    c.overlay(d).export("c" + str(file_number) + ".wav", format="wav")
+    for bg in background:
+        d = AudioSegment.from_wav(bg)
+        c = c.overlay(d)
+    c.export("c" + str(file_number) + ".wav", format="wav")

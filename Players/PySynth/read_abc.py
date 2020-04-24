@@ -118,7 +118,7 @@ def simp_line(a):
 				if a2[x2] == ']' and found_col:
 					for x3 in range(c, x2+1):
 						a2[x3] = ' '
-					break			
+                    break
 	return ''.join(a2)
 
 chord = False
@@ -328,13 +328,13 @@ if do_repeat:
 	song = song + second_ver
 
 if not sel:
-	print()
+    # print()
 	print("*** Song %u not found in file %s!" % (num, fn))
-	print()
+# print()
 else:
 	print(key, unit)
 	print(song)
-	print()
+    # print()
 	print(len(song))
 
 	pysynth.make_wav(song, bpm = bpm)

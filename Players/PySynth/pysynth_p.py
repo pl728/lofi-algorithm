@@ -57,7 +57,7 @@ pitchhz, keynum = getfreq(pr = True)
 #fn = 'pysynth_output.wav'
 ##########################################################################
 
-import wave, math, struct
+import wave, struct
 from Players.PySynth.mixfiles import mix_files
 
 def make_wav(song,bpm=120,transpose=0,pause=.05,boost=1.1,repeat=0,fn="out.wav", silent=False):
@@ -138,7 +138,9 @@ def make_wav(song,bpm=120,transpose=0,pause=.05,boost=1.1,repeat=0,fn="out.wav",
 
 	f.writeframes(b'')
 	f.close()
-	print()
+
+
+# print()
 
 ##########################################################################
 # Synthesize demo songs
