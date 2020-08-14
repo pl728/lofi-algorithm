@@ -10,4 +10,4 @@ The repository consists of:
 
 Eventually, machine learning will be incorporated into this project. 
 
-In the meantime, check out some [beats](http:/pl728.github.io/lofi-site) produced by this algo!!
+In the meantime, [check out some beats produced by this algo!!](http:/pl728.github.io/lofi-site)
