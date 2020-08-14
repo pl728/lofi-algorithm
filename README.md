@@ -8,4 +8,6 @@ The repository consists of:
 * an imported/forked synthesizer piano class to play and render the chord sequence
 * a "processor" class to overlay the .wav samples over our newly synthesized track
 
-Check out [sample beats](http:/pl728.github.io/lofi-site) produced by this algo!!
+Eventually, machine learning will be incorporated into this project. 
+
+In the meantime, check out some [beats](http:/pl728.github.io/lofi-site) produced by this algo!!
