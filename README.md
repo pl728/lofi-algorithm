@@ -10,4 +10,4 @@ The repository consists of:
 
 Currently doing research on how machine learning can be incorporated into this project!
 
-In the meantime, [check out some beats produced by this algo!!](http:/pl728.github.io/lofi-site)
+In the meantime, [check out some beats produced by this algo!!](https://pl728.github.io/lofi-generator-live-website/)
